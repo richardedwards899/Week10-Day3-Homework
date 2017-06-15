@@ -25,21 +25,23 @@ var arrayTasks = {
 		var returnArr = [];
 		for (var i = 0; i < arr.length; i++) {
 				if (arr.indexOf(arr[i]) != arr.lastIndexOf(arr[i])){
-					returnArr.push(arr[i]);
+					if (!returnArr.includes(arr[i])){
+						returnArr.push(arr[i]);
+					}
 				}
 		}
 		//remove duplicates
-		var array = [];
-		var num = returnArr[0]; //4
-		array[0] = num;
-
-		for (var i = 1; i < returnArr.length; i++) {
-			if (returnArr[i] > num ){
-				array.push(returnArr[i]);
-				num = returnArr[i];
-			}
-		}
-		return array;
+		// var array = [];
+		// var num = returnArr[0]; //4
+		// array[0] = num;
+		//
+		// for (var i = 1; i < returnArr.length; i++) {
+		// 	if (returnArr[i] > num ){
+		// 		array.push(returnArr[i]);
+		// 		num = returnArr[i];
+		// 	}
+		// }
+		return returnArr;
 	},
 
 	removeAndClone: function (arr, valueToRemove) {
